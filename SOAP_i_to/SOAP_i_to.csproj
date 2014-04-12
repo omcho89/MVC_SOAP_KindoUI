@@ -1,0 +1,1910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B481313E-25D4-4456-ACD2-AC21BE9640ED}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOAP_i_to</RootNamespace>
+    <AssemblyName>SOAP_i_to</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\SoapController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Test\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.solveworkforce.quintiles.dev\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\Test\configuration91.svcinfo" />
+    <Content Include="Service References\Test\configuration.svcinfo" />
+    <Content Include="Service References\Test\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Soap\Index.cshtml" />
+    <Content Include="Service References\Test\IndexMetricsTrainingEffectivenessScore.wsdl" />
+    <Content Include="Service References\Test\SOAP_i_to.Test.AgeGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AgeGroupsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AgesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AgesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllJobsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllWorkforceCategoriesHCFSHeadcountbyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllWorkforceCategoriesHCFSHeadcountbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllWorkforceCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.AllWorkforceCategoriesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.BusinessUnitsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.BusinessUnitsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavings2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavings2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavingsPerPositionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavingsPerPositionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCostSavingsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathCountryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobGroupResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobLeafResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobLeafResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobSpecialtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobSpecialtyResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathJobsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathMainChart2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathMainChart2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathMainChartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathMainChartResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathOverallCostSavingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathOverallCostSavingsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathTableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CareerPathTableResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ChartEntityProjectedOverallScenarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ChartEntityProjectedOverallScenarioResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ChartEntityProjectOverallScenario2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ChartEntityProjectOverallScenario2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CopyDownScenarioAssumptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CopyDownScenarioAssumptionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CountriesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CountriesWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CountriesWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CurrenciesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.CurrenciesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DefaultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DefaultResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DeleteScenarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DeleteScenarioResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsDashboardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsDashboardsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.DivisionsWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesDashboardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesDashboardsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.EntitiesWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ESErrorInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.FinancialStatementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.FinancialStatementResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHeadcountbyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHeadcountbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHumanCapitalProductivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHumanCapitalProductivityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHumanCapValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSHumanCapValueResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSROIChgRatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSROIChgRatesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSROIRatiobyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HCFSROIRatiobyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HiringSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HiringSourcesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HumanCapitalROIChangeRatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.HumanCapitalROIChangeRatesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_EngIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_EngIndexResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_EngIndex_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_EngIndex_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MgrBenchStrengthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MgrBenchStrengthResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MgrBenchStrength_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MgrBenchStrength_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MobilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_MobilityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_Mobility_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_Mobility_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_QualityOfHireResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_QualityOfHireResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_QualityOfHire_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_QualityOfHire_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TMIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TMIndexResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TMIndex_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TMIndex_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TrainingEffectIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TrainingEffectIndexResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TrainingEffectIndex_DriversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.im_TrainingEffectIndex_DriversResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.IndexMetricsTrainingEffectivenessIndexHistoricalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.IndexMetricsTrainingEffectivenessIndexHistoricalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.IndexMetricsTrainingEffectivenessScoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.IndexMetricsTrainingEffectivenessScoreResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamiliesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamiliesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamiliesWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamiliesWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamilyChildrenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamilyChildrenResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamilyChildrenWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFamilyChildrenWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFunctionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFunctionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFunctionsWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobFunctionsWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobsWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.JobsWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MetricLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MetricLibraryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MetricsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MetricsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTManagerAverageTenureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTManagerAverageTenureResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTPayvsMarketCompensationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTPayvsMarketCompensationResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTSpanofControlbyFunctionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTSpanofControlbyFunctionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTTotalCompensationBreakdownResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTTotalCompensationBreakdownResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTWorkforceTenureBreakdownResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MGMTWorkforceTenureBreakdownResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityCareerPromotionandXfrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityCareerPromotionandXfrResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityMobilitybyPctofWorkforceJobFamilyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityMobilitybyPctofWorkforceJobFamilyResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityPromotionandXfrRatebyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityPromotionandXfrRatebyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityWaterfallbyBusinessUnitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityWaterfallbyBusinessUnitResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityXfrsandTurnoverbyTenure2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityXfrsandTurnoverbyTenure2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityXfrsandTurnoverbyTenureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.MobilityXfrsandTurnoverbyTenureResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngHighPerformerDistributionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngHighPerformerDistributionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctHighlyEngagedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctHighlyEngagedResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctofHighPerfbyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctofHighPerfbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctofHighPerformersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngPctofHighPerformersResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfAndEngPerfRatingsDistrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfAndEngPerfRatingsDistrResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngRatingCategoryDistributionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerfandEngRatingCategoryDistributionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerformancesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PerformancesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PriorAndCurrentYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.PriorAndCurrentYearsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCompbyTenure2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCompbyTenure2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCompbyTenureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCompbyTenureResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCostofWorkforceExpnsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCostofWorkforceExpnsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCostofWorkforceRevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityCostofWorkforceRevResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityPerformerCompResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityPerformerCompResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTCOWYeartoYearChangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTCOWYeartoYearChangeResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTotalHRExpensesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTotalHRExpensesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTotalWorkforceCompandBenefitsCostsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ProductivityTotalWorkforceCompandBenefitsCostsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringCostPerHireResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringCostPerHireResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringHiresbyQuarterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringHiresbyQuarterResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringHiresDistrbyHiringSrcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringHiresDistrbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringPctofHighPerfbyHiringSrcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringPctofHighPerfbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringPerfDistrbyHiringSrcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringPerfDistrbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringRatioandTurnoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.RecruitingandHiringRatioandTurnoverResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ReplicateActualScenarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ReplicateActualScenarioResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIReportLevelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIReportLevelsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIStatementCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIStatementCountryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIStatementEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIStatementEntityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIWizardScreen1Section3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIWizardScreen1Section3Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ROIYearWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ScenariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ScenariosResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ScenariosWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.ScenariosWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TCOWResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TCOWResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TenureGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TenureGroupsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TM1DimensionInsertMemberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TM1LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TM1LogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TM1ViewSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TM1ViewWriteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.tm_MobilityAndCareerPathResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.tm_MobilityAndCareerPathResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.tm_WorkforceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.tm_WorkforceResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverAvgCostofTurnoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverAvgCostofTurnoverResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverOverallandHighPerfTurnoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverOverallandHighPerfTurnoverResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverbyTypeandQtrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverbyTypeandQtrResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverRateOverallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverRateOverallResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.TurnoverTurnoverRateResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebAssetStatementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebAssetStatementResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebCareerPathSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebCareerPathSummaryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebEntityROIProjectionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebEntityROIProjectionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebEntityROIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebEntityROIResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactStatementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactStatementResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactWPIRevenueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactWPIRevenueResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactWPIRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebImpactWPIRResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionProjectedROIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionProjectedROIResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionROIProjectionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionROIProjectionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionROIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebPositionROIResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioAllPositionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioAllPositionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioEntityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioPositionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebScenarioPositionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebTalentManagementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WebTalentManagementResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_CustomForecastAnalysisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_CustomForecastAnalysisResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_CustomForecastAnalysis_SubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_CustomForecastAnalysis_SubsetResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioComparisonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioComparisonResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection1Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioProjection3Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_ScenarioResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_Scenario_SubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_Scenario_SubsetResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastHCSupplybyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastHCSupplybyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastHeadcountSupplyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastHeadcountSupplyResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastTalentManagementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastTalentManagementResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastWorkforceFlowChartsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_SupplyForecastWorkforceFlowChartsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanHeadcountGapChartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanHeadcountGapChartResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanProjectionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanProjectionsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanTalentSupplyChainChartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WFP_WorkforcePlanTalentSupplyChainChartResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesWithTotalOldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesWithTotalOldResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceCategoriesWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHeadcountDistributionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHeadcountDistributionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHeadcountTenureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHeadcountTenureResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHighPerformerDistributionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceHighPerformerDistributionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewDistributionbyWorkforceCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewDistributionbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEEandNonEEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEEandNonEEResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsAgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsAgeResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsDiversityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsDiversityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsEntityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsJobFunctionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsJobFunctionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsPerformanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsPerformanceResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsTenureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewEmployeeDemographicsTenureResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewKPIsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewKPIsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewWorkforceGrowthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceOverviewWorkforceGrowthResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIHardVsSoftCostSavingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIHardVsSoftCostSavingsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjCostSavingsandValCreationbySrc2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjCostSavingsandValCreationbySrc2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjCostSavingsandValCreationbySrcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjCostSavingsandValCreationbySrcResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOperatingProfit2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOperatingProfit2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOperatingProfitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOperatingProfitResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOverallScenarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedOverallScenarioResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedTCOW2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedTCOW2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedTCOWResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjectedTCOWResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjHRVsBusCostSavingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIProjHRVsBusCostSavingsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIWebScenarioEntity2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIWebScenarioEntity2Results.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIWebScenarioEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.WorkforceROIWebScenarioEntityResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearsResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearWithTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Test\SOAP_i_to.Test.YearWithTotalResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\AgeGroupsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\AgesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\AllJobsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\AllWorkforceCategoriesHCFSHeadcountbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\AllWorkforceCategoriesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\BusinessUnitsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathCostSavings2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathCostSavingsPerPositionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathCostSavingsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathCountryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathJobGroupResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathJobLeafResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathJobSpecialtyResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathJobsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathMainChart2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathMainChartResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathOverallCostSavingsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CareerPathTableResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ChartEntityProjectedOverallScenarioResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ChartEntityProjectOverallScenario2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CopyDownScenarioAssumptionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CountriesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CountriesWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\CurrenciesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\DefaultResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\DeleteScenarioResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\DivisionsDashboardsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\DivisionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\DivisionsWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\EntitiesDashboardsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\EntitiesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\EntitiesWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ESErrorInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\FinancialStatementResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HCFSHeadcountbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HCFSHumanCapitalProductivityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HCFSHumanCapValueResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HCFSROIChgRatesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HCFSROIRatiobyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HiringSourcesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\HumanCapitalROIChangeRatesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_EngIndexResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_EngIndex_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_MgrBenchStrengthResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_MgrBenchStrength_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_MobilityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_Mobility_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_QualityOfHireResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_QualityOfHire_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_TMIndexResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_TMIndex_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_TrainingEffectIndexResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\im_TrainingEffectIndex_DriversResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\IndexMetricsTrainingEffectivenessIndexHistoricalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\IndexMetricsTrainingEffectivenessScore.wsdl" />
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\IndexMetricsTrainingEffectivenessScoreResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFamiliesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFamiliesWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFamilyChildrenResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFamilyChildrenWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFunctionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobFunctionsWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\JobsWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MetricLibraryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MetricsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MGMTManagerAverageTenureResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MGMTPayvsMarketCompensationResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MGMTSpanofControlbyFunctionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MGMTTotalCompensationBreakdownResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MGMTWorkforceTenureBreakdownResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityCareerPromotionandXfrResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityMobilitybyPctofWorkforceJobFamilyResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityPromotionandXfrRatebyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityWaterfallbyBusinessUnitResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityXfrsandTurnoverbyTenure2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\MobilityXfrsandTurnoverbyTenureResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfandEngHighPerformerDistributionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfandEngPctHighlyEngagedResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfandEngPctofHighPerfbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfandEngPctofHighPerformersResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfAndEngPerfRatingsDistrResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerfandEngRatingCategoryDistributionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PerformancesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\PriorAndCurrentYearsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityCompbyTenure2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityCompbyTenureResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityCostofWorkforceExpnsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityCostofWorkforceRevResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityPerformerCompResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityTCOWYeartoYearChangeResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityTotalHRExpensesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ProductivityTotalWorkforceCompandBenefitsCostsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringCostPerHireResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringHiresbyQuarterResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringHiresDistrbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringPctofHighPerfbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringPerfDistrbyHiringSrcResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\RecruitingandHiringRatioandTurnoverResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ReplicateActualScenarioResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIReportLevelsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIStatementCountryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIStatementEntityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIWizardScreen1Section3Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIYearResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIYearsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ROIYearWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ScenariosResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\ScenariosWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TCOWResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TenureGroupsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\tm_MobilityAndCareerPathResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\tm_WorkforceResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TurnoverAvgCostofTurnoverResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TurnoverOverallandHighPerfTurnoverResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TurnoverTurnoverbyTypeandQtrResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TurnoverTurnoverRateOverallResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\TurnoverTurnoverRateResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebAssetStatementResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebCareerPathSummaryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebEntityROIProjectionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebEntityROIResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebImpactStatementResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebImpactWPIRevenueResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebImpactWPIRResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebPositionProjectedROIResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebPositionROIProjectionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebPositionROIResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebScenarioAllPositionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebScenarioEntityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebScenarioPositionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WebTalentManagementResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_CustomForecastAnalysisResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_CustomForecastAnalysis_SubsetResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_ScenarioComparisonResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_ScenarioProjection1Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_ScenarioProjection2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_ScenarioProjection3Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_ScenarioResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_Scenario_SubsetResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_SupplyForecastHCSupplybyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_SupplyForecastHeadcountSupplyResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_SupplyForecastTalentManagementResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_SupplyForecastWorkforceFlowChartsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_WorkforcePlanHeadcountGapChartResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_WorkforcePlanProjectionsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WFP_WorkforcePlanTalentSupplyChainChartResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceCategoriesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceCategoriesWithTotalOldResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceCategoriesWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceHeadcountDistributionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceHeadcountTenureResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceHighPerformerDistributionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewDistributionbyWorkforceCategoryResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEEandNonEEResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsAgeResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsDiversityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsEntityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsJobFunctionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsPerformanceResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewEmployeeDemographicsTenureResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewKPIsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceOverviewWorkforceGrowthResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIHardVsSoftCostSavingsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjCostSavingsandValCreationbySrc2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjCostSavingsandValCreationbySrcResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjectedOperatingProfit2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjectedOperatingProfitResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjectedOverallScenarioResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjectedTCOW2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjectedTCOWResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIProjHRVsBusCostSavingsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIWebScenarioEntity2Results.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\WorkforceROIWebScenarioEntityResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\YearResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\YearsResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.solveworkforce.quintiles.dev\YearWithTotalResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://dev.quintiles.solveworkforce.com/es/esweb.asmx/IndexMetricsTrainingEffectivenessScore%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.solveworkforce.quintiles.dev\</RelPath>
+      <UpdateFromURL>http://dev.quintiles.solveworkforce.com/es/esweb.asmx/IndexMetricsTrainingEffectivenessScore%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SOAP_i_to_com_solveworkforce_quintiles_dev_ESWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:45559/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
